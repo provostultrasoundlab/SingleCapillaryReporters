@@ -3,6 +3,9 @@ classdef SingleCapillaryReporter < handle
     %
     % This class uses Hidden Markov Models (HMM) to identify capillary segments
     % based on velocity and spectral features extracted from particle tracks.
+    % Author: Stephen A. Lee, PhD
+    % Release Date: November 19th, 2025
+    % Updated: November 19th, 2025
     
     % =====================================================================
     % PROPERTIES
