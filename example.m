@@ -31,7 +31,7 @@ config.numObservations  = 4;                        % number of observation symb
                                                     %   4: high speed, high acceleration
 config.transProbs       = [0.9 0.1; 0.1 0.9];       % initial state transition probabilities
 config.emissionProbs    = [0.45 0.45 0.05 0.05; ... % initial emission probabilities
-                            0.05 0.05 0.45 0.45]; 
+                           0.05 0.05 0.45 0.45]; 
 config.cap_thresh       = 0.1;                      % threshold for minimum length of capillary segment [s]
 config.vel_thresh       = 1;                        % threshold for minimum velocity to consider as flowing [mm/s]
 config.grid_spacing     = grid.resBf/2;                % spacing of grid points in capillary [m]
@@ -46,20 +46,19 @@ nfiles = dir([datapath '/LongEnsemble_*.mat']);
 for fidx = 1:length(nfiles)
     config.tracks = load([datapath '/' nfiles(fidx).name]).tracks;
 
-    %% Initialize SingleCapillaryReporter Class
+    % Initialize SingleCapillaryReporter Class
     SCaRe = SingleCapillaryReporter(config);
 
-    %% train Hidden Markov Model on all tracks
+    % train Hidden Markov Model on all tracks
     SCaRe.train();
 
-    %% Analyze all tracks using trained HMM
+    % Analyze all tracks using trained HMM
     SCaRe.analyze();
 
-    %% display
+    % display
     SCaRe.display_capillaries();
 
-    %% Dwell Map
-
+    % Dwell Map
     dwellMap = dwellMap + SCaRe.tracks2dwellmap(grid);
 end
 
