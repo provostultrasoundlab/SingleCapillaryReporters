@@ -229,7 +229,7 @@ classdef SingleCapillaryReporter < handle
             cap.indices = indices;
             obj.capillaries = cap;
             
-            fprintf('Classified... [%d full caps | %d starts | %d ends]\n', ...
+            fprintf('Tracks contain: [%d full caps | %d starts | %d ends]\n', ...
                     sum(iscap == 1), sum(iscap == 2), sum(iscap == 3));
         end
 
@@ -356,13 +356,15 @@ classdef SingleCapillaryReporter < handle
 
             n_segments = sum(obj.capillaries.iscap == 1);
             cidx = find(obj.capillaries.iscap == 1);
-            M = [0 cumsum(cellfun(@(x) length(x), obj.tracks(cidx))')];
-            [X,Z] = deal(zeros(1,M(end)));
+            M = [0 cumsum(cellfun(@(x) length(x), obj.capillaries.indices(cidx))')];
+            [X,Z,T] = deal(zeros(1,M(end)));
 
             for idx = 1:n_segments
-                trk = obj.tracks{cidx(idx)}(:,1:3);           % trajectory [x,y,z] 
-                X(M(idx)+1:M(idx+1)) = trk(:,1)'*grid.resBf + grid.x_bounds(1); % x positions
-                Z(M(idx)+1:M(idx+1)) = trk(:,3)'*grid.resBf + grid.z_bounds(1); % z positions
+                trk = obj.tracks{cidx(idx)}(:,1:4);           % trajectory [x,y,z] 
+                loc = obj.capillaries.indices{cidx(idx)};
+                X(M(idx)+1:M(idx+1)) = trk(loc,1)'*grid.resBf + grid.x_bounds(1); % x positions
+                Z(M(idx)+1:M(idx+1)) = trk(loc,3)'*grid.resBf + grid.z_bounds(1); % z positions
+                T(M(idx)+1:M(idx+1)) = ones(1,length(loc)).*range(trk(loc,4))/obj.PRF; % total time in capillary segment
             end
 
             % Map X/Y values to bin indices
@@ -372,7 +374,8 @@ classdef SingleCapillaryReporter < handle
             % Limit indices to the range [1,numBins]
             id = (Xi>1).*(Zi>1).*(Xi<grid.imXsize).*(Zi<grid.imZsize);
 
-            dwellMap = accumarray([Zi(id==1)' Xi(id==1)'], (1/obj.PRF), [grid.imZsize grid.imXsize]);
+            % accumulate the mean value of the transit time onto grid
+            dwellMap = accumarray([Zi(id==1)' Xi(id==1)'], T(id==1)', [grid.imZsize grid.imXsize],@mean);
 
         end
 
@@ -516,7 +519,7 @@ classdef SingleCapillaryReporter < handle
             
             % Prepare background: grayscale dense map
             bg = repmat(mat2gray(mean(denseMap, 3)), [1 1 3]);
-            bg = max(bg, 0);
+            bg = max(bg, 0)*5;
             
             % Prepare foreground: normalized dwell map
             fg = mat2gray(dwellMap);
