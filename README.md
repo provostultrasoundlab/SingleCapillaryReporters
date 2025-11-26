@@ -10,12 +10,12 @@ SingleCapillaryReporters (SCaRe) automatically identifies capillary segments fro
 
 <table>
 <tr>
-<td><img src="images/density_sample.png" alt="Ultrasound density map" width="400"/></td>
+<td><img src="images/sample_density.png" alt="Ultrasound density map" width="400"/></td>
 <td><img src="images/sample.png" alt="Sample capillary detection" width="400"/></td>
 </tr>
 <tr>
-<td align="center"><b>Ultrasound Density Map</b></td>
-<td align="center"><b>Capillary Detection</b></td>
+<td align="center"><b>ULM Density Map</b></td>
+<td align="center"><b>Single Capillary Detection</b></td>
 </tr>
 </table>
 
