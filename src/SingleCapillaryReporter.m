@@ -519,7 +519,7 @@ classdef SingleCapillaryReporter < handle
             
             % Prepare background: grayscale dense map
             bg = repmat(mat2gray(mean(denseMap, 3)), [1 1 3]);
-            bg = max(bg, 0)*5;
+            bg = max(bg, 0)*10;
             
             % Prepare foreground: normalized dwell map
             fg = mat2gray(dwellMap);

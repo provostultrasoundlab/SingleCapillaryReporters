@@ -12,7 +12,7 @@ grid.startDepth     = 1.6e-3;                                               % st
 grid.endDepth       = 8.7e-3;                                               % end depth of imaging [m]
 grid.SoS            = 1540;                                                 % speed of sound [m/s]
 grid.wavelength     = grid.SoS/Trans.frequency;                             % wavelength [m]
-grid.resBf          = grid.wavelength/(2*sqrt(2));                          % beamforming grid resolution [m] this dataset was beamfored with 1/ (2*sqrt(2)) resolution
+grid.resBf          = grid.wavelength/(4);                          % beamforming grid resolution [m] this dataset was beamfored with 1/ (2*sqrt(2)) resolution
 grid.resSuperloc    = grid.wavelength/24;                                   % superlocalization grid resolution [m]
 grid.x_bounds       = [-Trans.aperture/2 Trans.aperture/2];                 % x grid boundaries
 grid.z_bounds       = [grid.startDepth grid.endDepth];                      % z grid boundaries
@@ -79,4 +79,4 @@ dwellMap = mean(dwellMap,3,'omitmissing');
  
 % display overlay of dwell map on dense reconstruction
 SCaRe.overlay_dwellmap(dwellMap, denseMap, grid);
-clim([0 2])
+clim([0 3])

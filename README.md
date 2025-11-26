@@ -6,6 +6,20 @@ A MATLAB tool for detecting and analyzing capillary segments in ultrasound parti
 
 SingleCapillaryReporters (SCaRe) automatically identifies capillary segments from ultrasound particle tracks by analyzing velocity patterns and spectral features. The tool uses an HMM-based approach to distinguish between arteriole, capillary, and venule regions, then generates dwell time maps for visualization.
 
+## Example Results
+
+<table>
+<tr>
+<td><img src="images/density_sample.png" alt="Ultrasound density map" width="400"/></td>
+<td><img src="images/sample.png" alt="Sample capillary detection" width="400"/></td>
+</tr>
+<tr>
+<td align="center"><b>Ultrasound Density Map</b></td>
+<td align="center"><b>Capillary Detection</b></td>
+</tr>
+</table>
+
+
 ## Features
 
 - **Automated capillary detection** using HMM with Viterbi algorithm
