@@ -1,18 +1,23 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: If you use this software, please cite it using the metadata from this file.
 type: software
-title: "SingleCapillaryReporters: Automated Capillary Detection in Ultrasound Localization Microscopy"
-version: 1.0.0
-date-released: 2025-12-26
+title: 'provostultrasoundlab/SingleCapillaryReporters: SCR 1.0.0'
+version: v1.0.0
+date-released: '2025-12-27'
+doi: 10.5281/zenodo.18065421
 url: "https://github.com/provostultrasoundlab/SingleCapillaryReporters"
-repository-code: "https://github.com/provostultrasoundlab/SingleCapillaryReporters"
-license: MIT
+repository-code: https://github.com/provostultrasoundlab/SingleCapillaryReporters/tree/v1.0.0
+license:
+  - mit
 authors:
   - family-names: Lee
     given-names: Stephen A.
     affiliation: "Polytechnique Montreal, Provost Ultrasound Lab"
     orcid: "https://orcid.org/0000-0002-1315-4266"
-abstract: "SingleCapillaryReporters (SCaRe) is a MATLAB tool for detecting and analyzing capillary segments in ultrasound particle tracking data using Hidden Markov Models (HMM). The tool automatically identifies capillary segments from ultrasound particle tracks by analyzing velocity patterns and spectral features, using an HMM-based approach to distinguish between arteriole, capillary, and venule regions."
+identifiers:
+  - type: swh
+    value: swh:1:dir:81cf54baa5676292fcb28ffb8ac69ed2312d407b;origin=https://doi.org/10.5281/zenodo.18065420;visit=swh:1:snp:3f6c6d3e8508a2aa421277f47eb40ecef5baabde;anchor=swh:1:rel:a2ecafb86589a6d5aa0d7bedabd197f04d74ad0a;path=provostultrasoundlab-SingleCapillaryReporters-5915ed0
+abstract: <p>First release of Single Capillary Reporter code for finding capillary tracks in ultrasound localization microscopy</p>
 keywords:
   - ultrasound
   - ultrasound localization microscopy
