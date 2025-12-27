@@ -157,7 +157,7 @@ SingleCapillaryReporters/
 If you use this software in your research, please cite:
 
 ```
-[Citation information to be added]
+Lee, S. A., & Provost, J. (2026). Assessing cerebral capillary function and stalling using single capillary reporters in ultrasound localization microscopy. The Proceedings of the National Academy of Sciences
 ```
 
 ## License
