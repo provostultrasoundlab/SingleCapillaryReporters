@@ -4,7 +4,7 @@ This README.txt file was generated on 2025-11-21 by Stephen Alexander Lee
 GENERAL INFORMATION
 --------------------
 
-1. Dataset Title: SingleCapillaryReporters 
+1. Dataset Title: SingleCapillaryReporters : https://doi.org/10.20383/103.01507 
 
 2. Author Information
 	A. Principal Investigator Contact Information
@@ -31,13 +31,13 @@ SHARING/ACCESS INFORMATION
 
 1. Licenses/restrictions placed on the data: These data are available under a Creative Commons Public Domain Dedication (CC0 1.0) license.
 
-2. Links to publications that cite or use the data: https://doi.org/10.48550/arXiv.2407.07857, https://doi.org/10.48550/arXiv.2509.08149
+2. Links to publications that cite or use the data: https://doi.org/10.1073/pnas.2509564123, https://doi.org/10.48550/arXiv.2509.08149
 
 3. Links/relationships to ancillary data sets or software packages: https://github.com/provostultrasoundlab/SingleCapillaryReporters
 
 4. Was data derived from another source? no
 
-5. Recommended citation for this dataset: Stephen A. Lee, Alexis Leconte, Alice Wu, Joshua Kinugasa, Gerardo R. Palacios, Jonathan Poree, Abbas F. Sadikot, Andreas Linninger, Jean Provost. (2025). SingleCapillaryReporters. Federated Research Data Repository. doi:10.20383/103.01507
+5. Recommended citation for this dataset: Stephen A. Lee, Alexis Leconte, Alice Wu, Joshua Kinugasa, Gerardo R. Palacios, Jonathan Poree, Abbas F. Sadikot, Andreas Linninger, Jean Provost. (2025). SingleCapillaryReporters. Federated Research Data Repository. doi:10.20383/103.01507 : https://doi.org/10.20383/103.01507 
 
 ---------------------
 DATA & FILE OVERVIEW
@@ -62,7 +62,7 @@ DATA & FILE OVERVIEW
 METHODOLOGICAL INFORMATION
 ---------------------------
 
-1. Description of methods used for collection/generation of data: The in vivo data was acquired in a wild-type 6-month-old mouse using continuous perfusion of Definity microbubbles via tail-vein catheterization. The scan was performed for 5 minutes with a gap-less acquisition scheme at 1000 frames per second, 9-angle plane wave compounding on a 2D 16 MHz ultrasound linear array. Details can be found here (https://doi.org/10.48550/arXiv.2407.07857).
+1. Description of methods used for collection/generation of data: The in vivo data was acquired in a wild-type 6-month-old mouse using continuous perfusion of Definity microbubbles via tail-vein catheterization. The scan was performed for 5 minutes with a gap-less acquisition scheme at 1000 frames per second, 9-angle plane wave compounding on a 2D 16 MHz ultrasound linear array. Details can be found here (https://doi.org/10.1073/pnas.2509564123).
 
 2. Methods for processing the data: Synthetic mouse brain cortex datasets were computed through sequential Monte Carlo simulations of microbubbles flowing through vessel trajectories. These individual microbubbles were combined into a 3D dataset where an example 16 MHz linear ultrasound transducer was used to insonify a slice of the microbubbles. The data contained include 3D microbubble flow through the field of view of the 2D ultrasound probe. More information is detailed in (https://doi.org/10.48550/arXiv.2509.08149).
 
